@@ -432,10 +432,10 @@ int id middle 0x7f060012
 int id middleRow 0x7f06004f
 int id midvborder1 0x7f060052
 int id midvborder2 0x7f060055
-int id name1EditText 0x7f060040
+int id name1EditText 0x7f06003f
 int id name1TextView 0x7f06003e
 int id name2EditText 0x7f060041
-int id name2TextView 0x7f06003f
+int id name2TextView 0x7f060040
 int id never 0x7f060009
 int id none 0x7f060010
 int id normal 0x7f060000

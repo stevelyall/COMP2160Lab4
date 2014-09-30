@@ -1,9 +1,6 @@
 package tru.lyall.lab4;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,13 +15,9 @@ import android.widget.ListView;
 public class MainMenuActivity extends ActionBarActivity implements OnItemClickListener {
 
 	private ListView mainMenuList;
-	//player names
-	private String p1Name;
-	private String p2Name;
 	
 	/**
-	 * Runs when the activity is created. Each time the main menu opens,
-	 * saved player names are read from a text file.
+	 * Runs when the activity is created.
 	 * @throws FileNotFoundException
 	 */
 	@Override
@@ -34,27 +27,6 @@ public class MainMenuActivity extends ActionBarActivity implements OnItemClickLi
 		Log.d("ActivityLife", "MainMenuActivity onCreate()");
 		mainMenuList = (ListView) findViewById(R.id.mainMenuListView);
 		mainMenuList.setOnItemClickListener(this);
-		
-		// reads names from file
-		try {
-			    FileInputStream fin = openFileInput("playerNames.txt");
-			   	Scanner s = new Scanner(fin);
-			   	s.useDelimiter("\n");
-			   	String names = "";
-			   	while (s.hasNext()) {
-			   		
-		    		p1Name = s.nextLine();
-		    		p2Name = s.nextLine();
-			   	}
-			   	s.close();
-			   	Log.i("IO","read file success" + p1Name );
-			    
-		 }
-		catch (FileNotFoundException e) {
-	    	Log.e("IO","Can't find saveName file",e);
-	    	p1Name = "Player 1";
-			p2Name = "Player 2";
-	    }
 	}
 	
 	/**
