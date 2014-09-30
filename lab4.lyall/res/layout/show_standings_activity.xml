@@ -1,91 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/AliceBlue"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/p1WinsTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="41dp"
-        android:layout_marginTop="90dp"
-        android:text="Player 1 wins:"
-        android:textSize="20sp" />
+    <TableRow
+        android:id="@+id/spacer1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" >
+    </TableRow>
 
-    <TextView
-        android:id="@+id/p2WinsTextView"
-        android:layout_width="wrap_content"
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/p1WinsTextView"
-        android:layout_below="@+id/p1WinsTextView"
-        android:layout_marginTop="22dp"
-        android:text="Player 2 wins:"
-        android:textSize="20sp" />
+        android:gravity="center" >
 
-    <TextView
-        android:id="@+id/p2NumWins"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/p1WinsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/p1_wins"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/p1NumWins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="@string/zero"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/spacer2"
+        android:layout_width="match_parent"
+        android:layout_height="20dp" >
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/p2WinsTextView"
-        android:layout_alignBottom="@+id/p2WinsTextView"
-        android:layout_alignLeft="@+id/p1NumWins"
-        android:text="0"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:gravity="center" >
 
-    <Button
-        android:id="@+id/resetStats"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/p2WinsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/p2_wins"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/p2NumWins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="@string/zero"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/spacer3"
+        android:layout_width="match_parent"
+        android:layout_height="20dp" >
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/backButton"
-        android:layout_alignBottom="@+id/backButton"
-        android:layout_alignLeft="@+id/p2WinsTextView"
-        android:layout_alignRight="@+id/p2WinsTextView"
-        android:text="@string/reset" />
+        android:layout_gravity="center"
+        android:gravity="center" >
 
-    <TextView
-        android:id="@+id/p1NumWins"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/lastPlayedLbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/last_play"
+            android:textSize="20sp" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/p2WinsTextView"
-        android:layout_marginLeft="69dp"
-        android:layout_toRightOf="@+id/p1WinsTextView"
-        android:text="0"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:gravity="center" >
 
-    <Button
-        android:id="@+id/backButton"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/lastPlayedTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Day Mon 11 11:11:11 2014"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/spacer4"
+        android:layout_width="match_parent"
+        android:layout_height="20dp" >
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/buttonContainer"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/p2NumWins"
-        android:layout_marginTop="86dp"
-        android:layout_toRightOf="@+id/resetStats"
-        android:text="@string/back" />
+        android:gravity="center" >
 
-    <TextView
-        android:id="@+id/lastPlayedLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/p2WinsTextView"
-        android:layout_below="@+id/p2WinsTextView"
-        android:layout_marginTop="20dp"
-        android:text="@+string/last_play"
-        android:textSize="20sp" />
+        <Button
+            android:id="@+id/resetStats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reset" />
 
-    <TextView
-        android:id="@+id/lastPlayedText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/lastPlayedLabel"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="24dp"
-        android:text="@string/last_play"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/back" />
+    </TableRow>
 
-</RelativeLayout>
+</LinearLayout>

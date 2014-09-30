@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 public class ShowStandingsActivity extends Activity implements OnClickListener{
 
-	private TextView p1WinsTextView, p1NumWins, p2WinsTextView, p2NumWins, lastPlayedText;
+	private TextView p1WinsTextView, p1NumWins, p2WinsTextView, p2NumWins, lastPlayedTime;
 	private Button backButton, resetStats;
 	private String p1Name, p2Name, lastPlayed;
 	// counters for total number of wins since stats were last reset
@@ -38,7 +38,7 @@ public class ShowStandingsActivity extends Activity implements OnClickListener{
 	    p2WinsTextView = (TextView) findViewById(R.id.p2WinsTextView);
 	    p1NumWins = (TextView) findViewById(R.id.p1NumWins);
 	    p2NumWins = (TextView) findViewById(R.id.p2NumWins);
-	    lastPlayedText = (TextView) findViewById(R.id.lastPlayedText);
+	    lastPlayedTime = (TextView) findViewById(R.id.lastPlayedTime);
 	    backButton = (Button) findViewById(R.id.backButton);
 	    backButton.setOnClickListener(this);
 	    resetStats = (Button) findViewById(R.id.resetStats);
@@ -116,7 +116,7 @@ public class ShowStandingsActivity extends Activity implements OnClickListener{
  			Log.e("IO", "Can't find lastplayed file", e);
  			lastPlayed = "Unknown";
  		}
- 		lastPlayedText.setText(lastPlayed);
+ 		lastPlayedTime.setText(lastPlayed);
 	}
 
 	/**

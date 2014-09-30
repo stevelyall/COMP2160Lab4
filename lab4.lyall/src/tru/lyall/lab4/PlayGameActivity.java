@@ -165,6 +165,7 @@ public class PlayGameActivity extends Activity {
 		// last played
 		try {
 			Date d = new Date();
+			d.toString();
 			String lastPlayed = d.toString();
 			FileOutputStream fout = openFileOutput("lastPlayed.txt", 0);
 			OutputStreamWriter out = new OutputStreamWriter(fout);

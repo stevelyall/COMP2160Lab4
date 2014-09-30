@@ -22,5 +22,8 @@
         <item >Standings</item>
     </string-array>
     <string name="last_play">Last played:</string>
+    <string name="p1_wins">Player 1 wins:</string>
+    <string name="p2_wins">Player 2 wins:</string>
+    <string name="zero">0</string>
 
 </resources>
