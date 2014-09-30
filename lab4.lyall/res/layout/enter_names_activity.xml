@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/AliceBlue"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/name1TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/name2TextView"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="74dp"
+        android:text="@string/p1_name" />
+
+    <TextView
+        android:id="@+id/name2TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/name1TextView"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="96dp"
+        android:text="@string/p2_name" />
+
+    <EditText
+        android:id="@+id/name1EditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/name2TextView"
+        android:layout_below="@+id/name1TextView"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:inputType="text"
+        android:maxLines="1" />
+
+    <EditText
+        android:id="@+id/name2EditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/name2TextView"
+        android:layout_below="@+id/name2TextView"
+        android:layout_marginTop="42dp"
+        android:ems="10"
+        android:inputType="text"
+        android:maxLines="1" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/saveNamesButton"
+        style="@+id/submitNamesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/name2EditText"
+        android:layout_below="@+id/name2EditText"
+        android:layout_marginTop="38dp"
+        android:text="@string/ok" />
+
+</RelativeLayout>

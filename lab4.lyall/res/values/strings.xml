@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TicTacToe_lyall</string>
+    <string name="empty_space">empty</string>
+    <string name="action_settings">Settings</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="enter_names">Enter Names</string>
+    <string name="play_game">Play Game</string>
+    <string name="show_standings">Standings</string>
+    <string name="p1_name">Player 1 name:</string>
+    <string name="p2_name">Player 2 name:</string>
+    <string name="player_1">Player 1</string>
+    <string name="player_2">Player 2</string>
+    <string name="ok">OK</string>
+    <string name="back">Back</string>
+   	<string name="reset">Reset Stats</string>
+    <string name="welcome">Welcome to Steve\'s Tic Tac Toe App!</string>
+    <string-array name="main_menu_entries">
+        <item >Enter Names</item>
+        <item >Play Game</item>
+        <item >Standings</item>
+    </string-array>
+
+</resources>

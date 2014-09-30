@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/AliceBlue"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/p1WinsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="41dp"
+        android:layout_marginTop="90dp"
+        android:text="Player 1 wins:"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/p2WinsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/p1WinsTextView"
+        android:layout_below="@+id/p1WinsTextView"
+        android:layout_marginTop="22dp"
+        android:text="Player 2 wins:"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/p2NumWins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/p2WinsTextView"
+        android:layout_alignBottom="@+id/p2WinsTextView"
+        android:layout_alignLeft="@+id/p1NumWins"
+        android:text="0"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/resetStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/backButton"
+        android:layout_alignBottom="@+id/backButton"
+        android:layout_alignLeft="@+id/p2WinsTextView"
+        android:layout_alignRight="@+id/p2WinsTextView"
+        android:text="@string/reset" />
+
+    <TextView
+        android:id="@+id/p1NumWins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/p2WinsTextView"
+        android:layout_marginLeft="69dp"
+        android:layout_toRightOf="@+id/p1WinsTextView"
+        android:text="0"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/p2NumWins"
+        android:layout_marginTop="86dp"
+        android:layout_toRightOf="@+id/resetStats"
+        android:text="@string/back" />
+
+</RelativeLayout>
