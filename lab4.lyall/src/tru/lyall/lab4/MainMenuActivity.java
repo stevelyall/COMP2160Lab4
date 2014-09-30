@@ -22,6 +22,11 @@ public class MainMenuActivity extends ActionBarActivity implements OnItemClickLi
 	private String p1Name;
 	private String p2Name;
 	
+	/**
+	 * Runs when the activity is created. Each time the main menu opens,
+	 * saved player names are read from a text file.
+	 * @throws FileNotFoundException
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -30,7 +35,7 @@ public class MainMenuActivity extends ActionBarActivity implements OnItemClickLi
 		mainMenuList = (ListView) findViewById(R.id.mainMenuListView);
 		mainMenuList.setOnItemClickListener(this);
 		
-		// reads player names from file
+		// reads names from file
 		try {
 			    FileInputStream fin = openFileInput("playerNames.txt");
 			   	Scanner s = new Scanner(fin);
@@ -52,7 +57,12 @@ public class MainMenuActivity extends ActionBarActivity implements OnItemClickLi
 	    }
 	}
 	
-	// when a list item is clicked, starts activity with proper intent
+	/**
+	 * Handler for clicks on ListView items in menu. Starts appropriate activity.
+	 * @param parent AdapterView
+	 * @param view View
+	 * @param position Index being clicked
+	 */
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {

@@ -24,7 +24,13 @@ public class EnterNamesActivity extends Activity implements OnClickListener {
 	private Button saveNamesButton;
 	private String p1Name;
 	private String p2Name;
-
+	
+	/**
+	 * Runs when activity is created. Reads player names from the save file
+	 * and updates EditText to show current names.
+	 * @param savedInstanceState Bundle for saved instance
+	 * @throws FileNotFoundException
+	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -56,6 +62,12 @@ public class EnterNamesActivity extends Activity implements OnClickListener {
 		name2EditText.setText(p2Name);
 	}
 
+	/**
+	 * Handler for save button click. Gets values in EditText objects
+	 * and ends activity, which will these values to a file.
+	 * @param view Button clicked
+	 * @see onDestroy()
+	 */
 	@Override
 	public void onClick(View v) {
 		// update player names when button is clicked, go back to menu
@@ -66,13 +78,23 @@ public class EnterNamesActivity extends Activity implements OnClickListener {
 		this.finish();
 	}
 
+	/**
+	 * Ensures a return to menu when the activity is destroyed when the
+	 * device back button is pressed.
+	 */
 	@Override
 	public void onBackPressed() {
 		super.onBackPressed();
 		Intent toMenu = new Intent(this, MainMenuActivity.class);
 		startActivity(toMenu);
 	}
-
+	/**
+	 * Called when the activity is destroyed, and saves the new player name
+	 * values to a text file.
+	 * 
+	 * @throws FileNotFoundException
+	 * @throws IoException
+	 */
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();

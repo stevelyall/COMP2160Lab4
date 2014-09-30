@@ -24,7 +24,12 @@ public class ShowStandingsActivity extends Activity implements OnClickListener{
 	private int p1Wins;
 	private int p2Wins;
 	
-	/** Called when the activity is first created. */
+	/** Called when the activity is first created.
+	 * Reads player standings from text file, and displays
+	 * them in the TextView objects.
+	 * @param savedInstanceState default Bundle
+	 * @throws FileNotFoundException
+	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
@@ -97,6 +102,12 @@ public class ShowStandingsActivity extends Activity implements OnClickListener{
 	    p2NumWins.setText(Integer.toString(p2Wins));
 	}
 
+	/**
+	 * Handler for button presses. Returns to main menu when back
+	 * button is pressed, and resets stats counter to zero when reset
+	 * is pushed.
+	 * @param v Button pushed.
+	 */
 	@Override
 	public void onClick(View v) {
 		// return to main menu
@@ -115,6 +126,9 @@ public class ShowStandingsActivity extends Activity implements OnClickListener{
 		}
 	}
 	
+	/**
+	 * Returns to main menu when the device back button is pushed.
+	 */
 	@Override
 	public void onBackPressed() {
 		super.onBackPressed();
