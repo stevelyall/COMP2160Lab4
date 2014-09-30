@@ -14,8 +14,8 @@
     <string name="player_2">Player 2</string>
     <string name="ok">OK</string>
     <string name="back">Back</string>
-   	<string name="reset">Reset Stats</string>
-    <string name="welcome">Welcome to Steve\'s Tic Tac Toe App!</string>
+   	<string name="reset">Reset</string>
+    <string name="welcome">Steve\'s Tic Tac Toe App</string>
     <string-array name="main_menu_entries">
         <item >Enter Names</item>
         <item >Play Game</item>
@@ -25,5 +25,6 @@
     <string name="p1_wins">Player 1 wins:</string>
     <string name="p2_wins">Player 2 wins:</string>
     <string name="zero">0</string>
+    <string name="dateTime_Placeholder">Jan 1 1900 11:00 AM</string>
 
 </resources>

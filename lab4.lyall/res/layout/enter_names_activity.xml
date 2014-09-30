@@ -58,13 +58,25 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/saveNamesButton"
-        style="@+id/submitNamesButton"
-        android:layout_width="wrap_content"
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:text="@string/ok" />
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/resetNamesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reset" />
+
+        <Button
+            android:id="@+id/saveNamesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ok" />
+
+    </TableRow>
 
 </LinearLayout>

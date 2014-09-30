@@ -135,11 +135,14 @@ public class ShowStandingsActivity extends Activity implements OnClickListener{
 		}
 		// clears standings
 		if (v.getId()==(R.id.resetStats)) {
-			deleteFile("save.txt");
+			deleteFile("lastPlayed.txt");
+			Log.i("IO","lastPlayed.txt deleted");
 			p1NumWins.setText("0");
 			p2NumWins.setText("0");
+			lastPlayed = "Unknown";
+			lastPlayedTime.setText(lastPlayed);
 			Toast.makeText(getBaseContext(), "Stats reset", Toast.LENGTH_SHORT).show();
-			Log.i("IO","save.txt deleted");
+			
 		}
 	}
 	

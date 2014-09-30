@@ -16,14 +16,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class EnterNamesActivity extends Activity implements OnClickListener {
 
 	// form elements
 	private TextView name1EditText, name2EditText;
-	private Button saveNamesButton;
-	private String p1Name;
-	private String p2Name;
+	private Button saveNamesButton, resetNamesButton;
+	private String p1Name, p2Name;
 	
 	/**
 	 * Runs when activity is created. Reads player names from the save file
@@ -39,6 +39,8 @@ public class EnterNamesActivity extends Activity implements OnClickListener {
 		name2EditText = (TextView) findViewById(R.id.name2EditText);
 		saveNamesButton = (Button) findViewById(R.id.saveNamesButton);
 		saveNamesButton.setOnClickListener(this);
+		resetNamesButton = (Button) findViewById(R.id.resetNamesButton);
+		resetNamesButton.setOnClickListener(this);
 
 		// checks for file with names, reads player names from file
 		try {
@@ -70,12 +72,24 @@ public class EnterNamesActivity extends Activity implements OnClickListener {
 	 */
 	@Override
 	public void onClick(View v) {
-		// update player names when button is clicked, go back to menu
-		p1Name = name1EditText.getText().toString();
-		p2Name = name2EditText.getText().toString();
-		Intent toMenu = new Intent(this, MainMenuActivity.class);
-		startActivity(toMenu);
-		this.finish();
+		if (v.getId()==(R.id.saveNamesButton)) {
+			// update player names when button is clicked, go back to menu
+			p1Name = name1EditText.getText().toString();
+			p2Name = name2EditText.getText().toString();
+			Intent toMenu = new Intent(this, MainMenuActivity.class);
+			startActivity(toMenu);
+			this.finish();
+		}
+		// clears standings
+		if (v.getId()==(R.id.resetNamesButton)) {
+			deleteFile("playerNames.txt");
+			p1Name = "Player 1";
+			name1EditText.setText(p1Name);
+			p2Name = "Player 2";
+			name2EditText.setText(p2Name);
+			Toast.makeText(getBaseContext(), "Names reset", Toast.LENGTH_SHORT).show();
+			Log.i("IO","playerNames.txt deleted");
+		}
 	}
 
 	/**

@@ -1,9 +1,10 @@
 package tru.lyall.lab4;
 
 import java.io.FileNotFoundException;
-import android.support.v7.app.ActionBarActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,11 +12,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class MainMenuActivity extends ActionBarActivity implements OnItemClickListener {
 
 	private ListView mainMenuList;
-	
+	private TextView title;
 	/**
 	 * Runs when the activity is created.
 	 * @throws FileNotFoundException
@@ -27,6 +29,7 @@ public class MainMenuActivity extends ActionBarActivity implements OnItemClickLi
 		Log.d("ActivityLife", "MainMenuActivity onCreate()");
 		mainMenuList = (ListView) findViewById(R.id.mainMenuListView);
 		mainMenuList.setOnItemClickListener(this);
+		TextView title = (TextView) findViewById(R.id.welcomeMessage);
 	}
 	
 	/**
