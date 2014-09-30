@@ -65,8 +65,9 @@ public class EnterNamesActivity extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * Handler for save button click. Gets values in EditText objects
-	 * and ends activity, which will these values to a file.
+	 * Handler for button clicks. When OK is pressed gets values in EditText objects
+	 * and ends activity, which will these values to a file. For Reset, deletes the
+	 * playerNames.txt file and resets the names to defaults.
 	 * @param view Button clicked
 	 * @see onDestroy()
 	 */
