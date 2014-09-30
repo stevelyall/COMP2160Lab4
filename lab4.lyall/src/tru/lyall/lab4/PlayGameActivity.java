@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.text.DateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -162,11 +163,11 @@ public class PlayGameActivity extends Activity {
 			Log.e("IO", "IOException thrown reading file",e);
 		}
 		
-		// last played
+		// last date and time played, format and save to file
 		try {
-			Date d = new Date();
-			d.toString();
-			String lastPlayed = d.toString();
+			DateFormat df = DateFormat.getDateTimeInstance();
+			String lastPlayed = df.format(new Date());
+			
 			FileOutputStream fout = openFileOutput("lastPlayed.txt", 0);
 			OutputStreamWriter out = new OutputStreamWriter(fout);
 			out.write(lastPlayed);
