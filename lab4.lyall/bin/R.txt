@@ -390,7 +390,7 @@ int id action_context_bar 0x7f06001d
 int id action_menu_divider 0x7f060016
 int id action_menu_presenter 0x7f060017
 int id action_mode_close_button 0x7f060024
-int id action_settings 0x7f060069
+int id action_settings 0x7f06006b
 int id activity_chooser_view_content 0x7f060025
 int id always 0x7f06000b
 int id backButton 0x7f060068
@@ -420,6 +420,8 @@ int id homeAsUp 0x7f060005
 int id icon 0x7f06002a
 int id ifRoom 0x7f06000a
 int id image 0x7f060027
+int id lastPlayedLabel 0x7f060069
+int id lastPlayedText 0x7f06006a
 int id listMode 0x7f060001
 int id list_item 0x7f060029
 int id mainMenuListView 0x7f06003c
@@ -535,6 +537,7 @@ int string app_name 0x7f0b000d
 int string back 0x7f0b0019
 int string empty_space 0x7f0b000e
 int string enter_names 0x7f0b0011
+int string last_play 0x7f0b001c
 int string main_menu 0x7f0b0010
 int string ok 0x7f0b0018
 int string p1_name 0x7f0b0014

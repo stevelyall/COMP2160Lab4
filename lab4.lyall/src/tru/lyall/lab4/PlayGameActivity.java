@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.util.Date;
 import java.util.Scanner;
 
 import android.app.Activity;
@@ -132,7 +133,8 @@ public class PlayGameActivity extends Activity {
 	}
 	
 	/**
-	 * Saves record of X or O player's win for this game to a text file. 
+	 * Saves record of X or O player's win for this game to a text file,
+	 * as well as the date and time. 
 	 * @param i
 	 */
 	private void recordWin(int i) {
@@ -160,6 +162,22 @@ public class PlayGameActivity extends Activity {
 			Log.e("IO", "IOException thrown reading file",e);
 		}
 		
+		// last played
+		try {
+			Date d = new Date();
+			String lastPlayed = d.toString();
+			FileOutputStream fout = openFileOutput("lastPlayed.txt", 0);
+			OutputStreamWriter out = new OutputStreamWriter(fout);
+			out.write(lastPlayed);
+			out.write("\n");
+			out.close();
+			Log.i("IO", "lastPlayed.txt write success");
+			Log.i("IO", "wrote " + lastPlayed);
+		} catch (FileNotFoundException e) {
+			Log.e("IO", "can't find file lastPlayed.txt when saving", e);
+		} catch (IOException e) {
+			Log.e("IO", "IOException thrown reading file lastPlayed.txt", e);
+		}
 	}
 	
 	/**

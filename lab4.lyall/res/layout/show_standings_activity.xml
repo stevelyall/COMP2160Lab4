@@ -67,4 +67,25 @@
         android:layout_toRightOf="@+id/resetStats"
         android:text="@string/back" />
 
+    <TextView
+        android:id="@+id/lastPlayedLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/p2WinsTextView"
+        android:layout_below="@+id/p2WinsTextView"
+        android:layout_marginTop="20dp"
+        android:text="@+string/last_play"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/lastPlayedText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lastPlayedLabel"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="24dp"
+        android:text="@string/last_play"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
 </RelativeLayout>

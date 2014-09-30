@@ -93,7 +93,7 @@ public class EnterNamesActivity extends Activity implements OnClickListener {
 	 * values to a text file.
 	 * 
 	 * @throws FileNotFoundException
-	 * @throws IoException
+	 * @throws IOException
 	 */
 	@Override
 	protected void onDestroy() {

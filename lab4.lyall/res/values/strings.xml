@@ -21,5 +21,6 @@
         <item >Play Game</item>
         <item >Standings</item>
     </string-array>
+    <string name="last_play">Last played:</string>
 
 </resources>

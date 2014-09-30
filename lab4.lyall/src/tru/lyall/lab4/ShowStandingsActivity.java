@@ -17,15 +17,15 @@ import android.widget.Toast;
 
 public class ShowStandingsActivity extends Activity implements OnClickListener{
 
-	private TextView p1WinsTextView, p1NumWins, p2WinsTextView, p2NumWins;
+	private TextView p1WinsTextView, p1NumWins, p2WinsTextView, p2NumWins, lastPlayedText;
 	private Button backButton, resetStats;
-	private String p1Name, p2Name;
+	private String p1Name, p2Name, lastPlayed;
 	// counters for total number of wins since stats were last reset
 	private int p1Wins;
 	private int p2Wins;
 	
 	/** Called when the activity is first created.
-	 * Reads player standings from text file, and displays
+	 * Reads player standings from text files, and displays
 	 * them in the TextView objects.
 	 * @param savedInstanceState default Bundle
 	 * @throws FileNotFoundException
@@ -38,11 +38,11 @@ public class ShowStandingsActivity extends Activity implements OnClickListener{
 	    p2WinsTextView = (TextView) findViewById(R.id.p2WinsTextView);
 	    p1NumWins = (TextView) findViewById(R.id.p1NumWins);
 	    p2NumWins = (TextView) findViewById(R.id.p2NumWins);
+	    lastPlayedText = (TextView) findViewById(R.id.lastPlayedText);
 	    backButton = (Button) findViewById(R.id.backButton);
 	    backButton.setOnClickListener(this);
 	    resetStats = (Button) findViewById(R.id.resetStats);
 	    resetStats.setOnClickListener(this);
-	    
 	    	// reads player names from file
 	 		try {
 	 			FileInputStream fin = openFileInput("playerNames.txt");
@@ -100,6 +100,23 @@ public class ShowStandingsActivity extends Activity implements OnClickListener{
 	   // display totals
 	    p1NumWins.setText(Integer.toString(p1Wins));
 	    p2NumWins.setText(Integer.toString(p2Wins));
+
+	    // reads last play from file
+ 		try {
+ 			FileInputStream fin = openFileInput("lastPlayed.txt");
+ 			Scanner s = new Scanner(fin);
+ 			s.useDelimiter("\n");
+ 			while (s.hasNext()) {
+ 				lastPlayed = s.nextLine();
+ 			}
+ 			s.close();
+ 			Log.i("IO", "read file success" + lastPlayed);
+
+ 		} catch (FileNotFoundException e) {
+ 			Log.e("IO", "Can't find lastplayed file", e);
+ 			lastPlayed = "Unknown";
+ 		}
+ 		lastPlayedText.setText(lastPlayed);
 	}
 
 	/**
